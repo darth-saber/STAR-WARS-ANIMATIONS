@@ -1,16 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Simple Web Project</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Enhanced Star Wars Animation with Hyperspace</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/star-jedi" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <h1>Welcome to the Simple Web Project</h1>
-    <img src="image.png" alt="Sample Image" />
-    <button id="clickMeBtn">Click Me</button>
+<canvas id="starfield"></canvas>
+<canvas id="hyperspace"></canvas>
 
-    <script src="script.js"></script>
+<div class="container" id="mainContent" style="display: none;">
+  <!-- The main animated image (Brandon Windu) has been removed -->
+  <img id="tieFighter" src="image/vaders-tie-fighter.jpeg" alt="TIE Fighter" />
+
+  <!-- Characters with adjusted positions to prevent overlapping -->
+  <img class="character glow-purple" id="jediSolis" src="image/Finn_Windu_ AKA Jedi Solis.png" alt="Jedi Solis" style="top: 15%; left: 15%; opacity: 0;" />
+  <img class="character glow-red" id="darthNightmare" src="image/Darth Nightmare.jpeg" alt="Darth Nightmare" style="bottom: 10%; left: 25%; opacity: 0;" />
+  <img class="character glow-red" id="sithJayden" src="image/ Sith Jayden_Windu .png" alt="Sith Jayden" style="top: 25%; right: 15%; opacity: 0;" />
+  <img class="character glow-blue" id="brandon" src="image/Brandon_Windu AKA Jedi Azarik.png" alt="Brandon" style="top: 50%; right: 35%; opacity: 0;" />
+
+  <div class="crawl-container">
+    <div class="crawl-text">
+      A long time ago in a galaxy far, far away....<br /><br />
+      It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire...
+    </div>
+  </div>
+</div>
+
+<button id="startButton">Start Star Wars Animation</button>
+
+<audio id="starWarsAudio" src="https://actions.google.com/sounds/v1/movies/star_wars_theme.ogg" loop></audio>
+<audio id="saberSound" src="https://freesound.org/data/previews/341/341695_3248244-lq.mp3"></audio>
+<audio id="flybySound" src="https://freesound.org/data/previews/331/331912_3248244-lq.mp3"></audio>
+
+<script src="star_wars_animation.js"></script>
 </body>
 </html>
